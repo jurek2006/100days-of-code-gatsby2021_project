@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "100daysOfCodeGatsby2021_project",
+    title: "AudioC0RE",
     siteUrl: `https://audioC0RE.com`,
     description: `AudioC0RE - your headphones are here`,
+    author: `Jurek Skowron`
   },
   plugins: [
     {
