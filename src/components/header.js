@@ -10,27 +10,19 @@ const Header = () => {
     return (
         <StyledHeader>
             <h1>AudioC0RE</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <Link activeClassName="active" to="/home">Home</Link>
-                    </li>
-                    <li>
-                        <Link activeClassName="active" to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link activeClassName="active" to="/location">Locations</Link>
-                        <ul>
-                            {
-                                locations.map(location => <li key={location.slug}>
-                                    <Link activeClassName="active" to={location.locationPath}>
-                                        {location.name}
-                                    </Link>
-                                </li>)
-                            }
-                        </ul>
-                    </li>
-                </ul>
+            <nav className="navBar">
+                <Link className="navLink" activeClassName="navLink--active" to="/home">Home</Link>
+                <Link className="navLink" activeClassName="navLink--active" to="/about">About</Link>
+                <Link className="navLink" activeClassName="navLink--active" to="/location">Locations:</Link>
+                <div className="navBar__subBar">
+                    {
+                        locations.map(location => 
+                            <Link key={location.slug} className="navLink" activeClassName="navLink--active" to={location.locationPath}>
+                                {location.name}
+                            </Link>
+                        )
+                    }
+                </div>
             </nav>
         </StyledHeader>
         
@@ -52,7 +44,29 @@ const getLocations = graphql`
 export default Header
 
 const StyledHeader = styled.header`
-    a.active{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+        border: 1px solid; 
+
+    .navBar{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .navBar__subBar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    a.navLink{
+        padding: 0 0.5rem;
+    }
+
+    a.navLink--active{
         color: red;
     }
 `
