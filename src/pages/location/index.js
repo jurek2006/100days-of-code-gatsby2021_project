@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import Layout from '../../components/layout'
 
 const Locations = ({ data: { allContentfulLocation } }) => {
     const locations = allContentfulLocation.nodes
     return (
-        <div>
+        <Layout>
             Locations:
             <ul>
 
@@ -16,7 +17,7 @@ const Locations = ({ data: { allContentfulLocation } }) => {
                         </li>)
              }
             </ul>
-        </div>
+        </Layout>
     )
 }
 
