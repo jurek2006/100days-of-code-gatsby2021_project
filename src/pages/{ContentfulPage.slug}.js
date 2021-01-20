@@ -1,12 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 
 const ContentfulPage = ({data: {page}}) => {
     const {title} = page
     return (
-        <Layout>
+      <Layout>
+        <SEO title={title} />
             <h2>{title}</h2>
         </Layout>
     )

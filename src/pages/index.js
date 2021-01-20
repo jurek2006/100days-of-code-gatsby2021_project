@@ -1,5 +1,6 @@
 import * as React from "react"
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 
 // styles
@@ -99,7 +100,8 @@ const links = [
 ]
 
 const IndexPage = () => <Layout>
-<p>Test</p>
+  <SEO title="Index" />
+  <p>Test</p>
 
 </Layout> 
 

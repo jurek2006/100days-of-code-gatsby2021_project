@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/layout'
+import SEO from '../../components/seo'
 
 const Locations = ({ data: { allContentfulLocation } }) => {
     const locations = allContentfulLocation.nodes
     return (
-        <Layout>
+      <Layout>
+        <SEO title="Locations" />
         <h2>Locations:</h2>
             <ul>
 
