@@ -5,7 +5,7 @@ const ContentfulLocation = ({ data: { location } }) => {
     const { name } = location
     return (
         <Layout>
-            <h1>{name}</h1>
+            <h2>{name}</h2>
         </Layout>
     )
 }

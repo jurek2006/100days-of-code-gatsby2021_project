@@ -6,7 +6,7 @@ const Locations = ({ data: { allContentfulLocation } }) => {
     const locations = allContentfulLocation.nodes
     return (
         <Layout>
-            Locations:
+        <h2>Locations:</h2>
             <ul>
 
             {
