@@ -1,13 +1,14 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 
 const ContentfulPage = ({data: {page}}) => {
     const {title} = page
     return (
-        <div>
-            <h1>{title}</h1>
-        </div>
+        <Layout>
+            <h2>{title}</h2>
+        </Layout>
     )
 }
 
