@@ -1,11 +1,14 @@
 import React from 'react'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
 
 const ContentfulLocation = ({ data: { location } }) => {
     const { name } = location
     return (
-        <div>
-            <h1>{name}</h1>
-        </div>
+      <Layout>
+        <SEO title={name} />
+            <h2>{name}</h2>
+        </Layout>
     )
 }
 

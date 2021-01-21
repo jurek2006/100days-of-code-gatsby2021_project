@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
 
 const Locations = ({ data: { allContentfulLocation } }) => {
     const locations = allContentfulLocation.nodes
     return (
-        <div>
-            Locations:
+      <Layout>
+        <SEO title="Locations" />
+        <h2>Locations:</h2>
             <ul>
 
             {
@@ -16,7 +19,7 @@ const Locations = ({ data: { allContentfulLocation } }) => {
                         </li>)
              }
             </ul>
-        </div>
+        </Layout>
     )
 }
 
