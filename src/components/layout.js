@@ -1,24 +1,22 @@
-import React from 'react'
-import PropTypes from "prop-types"
-import Header from './header'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Header from './header';
 
-const Layout = ({children}) => {
-    return (
-        <StyledLayout>
-            <Header />
-            <main>{children}</main>
-        </StyledLayout>
-    )
-}
+const Layout = ({ children }) => (
+  <StyledLayout>
+    <Header />
+    <main>{children}</main>
+  </StyledLayout>
+);
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired,
+};
 
-export default Layout
+export default Layout;
 
 const StyledLayout = styled.div`
-    color: #232129;
-    font-family: -apple-system, Roboto, sans-serif, serif;
-`
+  color: #232129;
+  font-family: -apple-system, Roboto, sans-serif, serif;
+`;
