@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const Header = () => {
   const { allContentfulLocation } = useStaticQuery(getLocations);
   const locations = allContentfulLocation.nodes;
-  console.log(locations);
 
   return (
     <StyledHeader>
