@@ -8,9 +8,13 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <h1>AudioC0RE</h1>
+      <h1>
+        <Link className="navLink" to="/">
+          AudioC0RE
+        </Link>
+      </h1>
       <nav className="navBar">
-        <Link className="navLink" activeClassName="navLink--active" to="/home">
+        <Link className="navLink" activeClassName="navLink--active" to="/">
           Home
         </Link>
         <Link className="navLink" activeClassName="navLink--active" to="/about">
