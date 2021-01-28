@@ -1,26 +1,38 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import { Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby';
+import { Box, Link, Text } from '@chakra-ui/react';
+import ThemeToggle from './themeToggle';
 
 const Header = () => {
   const { allContentfulLocation } = useStaticQuery(getLocations);
   const locations = allContentfulLocation.nodes;
 
   return (
-    <StyledHeader>
+    <Box as="header" background="rebeccapurple">
       <h1>
-        <Link className="navLink" to="/">
+        <Link as={GatsbyLink} className="navLink" to="/">
           AudioC0RE
         </Link>
       </h1>
       <nav className="navBar">
-        <Link className="navLink" activeClassName="navLink--active" to="/">
+        <Link
+          as={GatsbyLink}
+          className="navLink"
+          activeClassName="navLink--active"
+          to="/"
+        >
           Home
         </Link>
-        <Link className="navLink" activeClassName="navLink--active" to="/about">
+        <Link
+          as={GatsbyLink}
+          className="navLink"
+          activeClassName="navLink--active"
+          to="/about"
+        >
           About
         </Link>
         <Link
+          as={GatsbyLink}
           className="navLink"
           activeClassName="navLink--active"
           to="/location"
@@ -30,6 +42,7 @@ const Header = () => {
         <div className="navBar__subBar">
           {locations.map((location) => (
             <Link
+              as={GatsbyLink}
               key={location.slug}
               className="navLink"
               activeClassName="navLink--active"
@@ -40,7 +53,8 @@ const Header = () => {
           ))}
         </div>
       </nav>
-    </StyledHeader>
+      <ThemeToggle />
+    </Box>
   );
 };
 
@@ -60,30 +74,31 @@ const getLocations = graphql`
 
 export default Header;
 
-const StyledHeader = styled.header`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  border: 1px solid;
+// TEMP to delete
+// const StyledHeader = styled.header`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+//   flex-wrap: wrap;
+//   border: 1px solid;
 
-  .navBar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+//   .navBar {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//   }
 
-  .navBar__subBar {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
+//   .navBar__subBar {
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//   }
 
-  a.navLink {
-    padding: 0 0.5rem;
-  }
+//   a.navLink {
+//     padding: 0 0.5rem;
+//   }
 
-  a.navLink--active {
-    color: red;
-  }
-`;
+//   a.navLink--active {
+//     color: red;
+//   }
+// `;
