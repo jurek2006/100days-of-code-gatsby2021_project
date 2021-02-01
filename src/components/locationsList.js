@@ -19,7 +19,6 @@ const LocationsList = () => {
   const {
     allContentfulLocation: { nodes: locations },
   } = useStaticQuery(getLocations);
-  console.log(locations);
   return (
     <div>
       <h2>Our locations:</h2>

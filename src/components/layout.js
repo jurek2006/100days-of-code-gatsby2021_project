@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { Box, Text } from '@chakra-ui/react';
 import Header from './header';
 
 const Layout = ({ children }) => (
-  <StyledLayout>
+  <Box>
     <Header />
+    <Text fontSize="xl">Hello world</Text>
     <main>{children}</main>
-  </StyledLayout>
+  </Box>
 );
 
 Layout.propTypes = {
@@ -15,8 +16,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
-const StyledLayout = styled.div`
-  color: #232129;
-  font-family: -apple-system, Roboto, sans-serif, serif;
-`;
