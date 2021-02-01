@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Heading, Text } from '@chakra-ui/react';
 import Header from './header';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, title = '' }) => (
   <Box>
     <Header />
-    <Text fontSize="xl">Hello world</Text>
+    <Heading as="h1" fontSize="xl">
+      {title}
+    </Heading>
     <main>{children}</main>
   </Box>
 );
