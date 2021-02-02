@@ -3,7 +3,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const AboutPage = () => (
-  <Layout>
+  <Layout title="About us">
     <SEO title="About us" />
     <p>About AudioC0RE.</p>
     <p>

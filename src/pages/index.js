@@ -4,7 +4,7 @@ import LocationsList from '../components/locationsList';
 import SEO from '../components/seo';
 
 const IndexPage = () => (
-  <Layout>
+  <Layout title="AudioC0RE">
     <SEO title="Index" />
     <LocationsList />
     <p>AudioC0RE PoC of website. Content comes from Contentful.</p>

@@ -14,6 +14,7 @@ const NavBar = (props) => {
   const navBarElements = [
     { text: 'Home', to: '/' },
     { text: 'About', to: '/about' },
+    { text: 'Contact', to: '/contact' },
     {
       text: 'Locations',
       nestedElements: locationsLinks,
