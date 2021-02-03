@@ -1,14 +1,23 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 
+// I don't know (yet) how to use gatsby-plugin-image for images from contentful
+
 const ContentfulLocation = ({ data: { location } }) => {
-  const { name } = location;
+  const { name, image } = location;
   return (
     <Layout>
       <SEO title={name} />
       <h2>{name}</h2>
+      {image && image.fluid && (
+        <>
+          <Img fluid={image.fluid} />
+          <p>{image.description}</p>
+        </>
+      )}
     </Layout>
   );
 };
@@ -22,6 +31,12 @@ export const query = graphql`
       id
       slug
       name
+      image {
+        description
+        fluid(maxWidth: 2000) {
+          ...GatsbyContentfulFluid_tracedSVG
+        }
+      }
     }
   }
 `;
